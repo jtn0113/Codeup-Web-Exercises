@@ -1,0 +1,50 @@
+body {
+	background-color: #00e6e6;
+	background-image: url(img/tree_bark.png);
+	background-attachment: fixed;
+	color: #00b386;
+	font-family: 'Slabo 27px', serif;
+}
+
+h1, h2, h3{
+	color: #008080;
+	text-decoration: underline;
+}
+
+
+ol {
+	list-style: upper-roman;
+}
+
+ul {
+	list-style: square;
+}
+
+a:link {
+	color: black;
+}
+
+a:hover {
+	color: blue;
+}
+
+a:visited {
+	color: orange;
+}
+
+a:active {
+	color: pink;
+}
+
+table {
+	padding: .5em;
+	font-size: 1em;
+}
+
+tr:nth-child(odd) {
+	background-color: #BCB5B4; 
+	opacity: 0.6;}
+
+img {
+	opacity: 0.6;
+}

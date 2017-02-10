@@ -1,0 +1,72 @@
+#logo {
+	margin: 0 auto;
+	width: 900px;
+	height: 300px;
+	background-color: #C41A1A;
+}
+
+#orderbutton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	position: fixed;
+	height: 125px;
+}
+
+#pointing {
+	position: absolute;
+	top: 150px;
+	right: 5px;
+	position: fixed;
+	height: 75px;
+	transform: rotate(-75deg);
+}
+
+#menu {
+	background-color: #007E39;
+	font-size: 1.5em;
+	word-spacing: 2.5em;
+}
+
+body {
+	background-color: #red;
+	background-image: url(../img/pizza2.png);
+	background-attachment: fixed;
+	background-size: 300px;
+	color: #007E39;
+	font-family: 'Slabo 27px', serif;
+}
+
+main {
+	background-color: white;
+	margin: 0 auto;
+	width: 900px;
+	text-align: center;
+}
+
+h1, h2, h3{
+	color: #007E39;
+	text-decoration: underline;
+}
+
+button {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+div>a:link{
+	color: white;
+}
+
+div>a:visited{
+	color: white;
+}
+
+div>a:hover{
+	color: white;
+}
+
+div>a:active{
+	color: white;
+}
+
