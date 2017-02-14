@@ -3,18 +3,18 @@ img {
 }
 
 .bg-1 { 
-    background-color: #A37774; /* redish */
-    color: #FFF; /*white*/
+    background-color: #A37774; 
+    color: #FFF; 
 }
 
 .bg-2 {
-	background-color: #484A47; /*dark grey*/
+	background-color: #484A47; 
 	color: #FFF; /*white*/
 }
 
 .bg-3 {
-	background-color: #FFF; /*white*/
-	color: #4C5A58; /*grey*/
+	background-color: #FFF; 
+	color: #4C5A58; 
 }
 
 .container-fluid {

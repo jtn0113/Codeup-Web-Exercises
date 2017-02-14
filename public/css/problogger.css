@@ -1,0 +1,50 @@
+.header {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar {
+	margin: 0;
+	background-color: #206494;
+}
+
+.nav {
+	color: white;
+}
+
+.jumbotron {
+	margin: 0;
+}
+
+.well {
+	margin: 0;
+}
+
+.header-img {
+	width: 25%;
+}
+
+.header-text {	
+	position: relative;
+	float: right;
+}
+
+.jumbotron-text {
+	text-align: center;
+	float: right;
+}
+
+.jumbotron {
+	background-image: url("http://www.777a7.com/img161/tfofzbeqzmrrwnhgyyev.jpg");
+	color: white;
+	text-align: center;
+}
+
+.well-text {
+	float: right;
+}
+
+.img {
+	width: 350px;
+	height: 250px;
+}
