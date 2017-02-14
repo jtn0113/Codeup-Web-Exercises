@@ -27,3 +27,15 @@ while (i <= 65536) {
 	i = i * 2;
 }
 
+console.log('=======================================')
+
+ var even = Math.floor(Math.random() * 1000)
+
+ if (even %2 == 0){
+ 	console.log(even);
+ } else {
+ 	console.log(even + 1);
+ }
+
+ 
+ console.log('=======================================')
