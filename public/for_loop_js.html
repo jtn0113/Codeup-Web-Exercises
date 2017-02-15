@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Loop JS</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var luckyNumber = Math.floor(Math.random()* 10 + 1);
+		var oddEvenNumber = Math.floor(Math.random()* 180 + 20);
+
+		for (var i = 1; i <= 10; i++) {
+			console.log(luckyNumber + "x" + i + "=" + luckyNumber * i);
+		}
+
+		for (var i = 0; i <= 10; i++) {
+			if (oddEvenNumber %2 == 0) {
+				console.log(oddEvenNumber + " is an even number")
+			} else {
+				console.log(oddEvenNumber + " is an odd number")
+			}
+		}
+
+		for (var i = 100; i >= 5; i -= 5) {
+			console.log(i);		
+		}
+
+		var array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+		var string = "";
+
+		for (var i = 0; i <= 9; i += 1) {
+			string = "";
+			for(var j = 0; j <= i; j++){
+			    string += array[i];
+			}
+			    console.log(string);
+			}
+
+	</script>
+</body>
+</html>
+
+

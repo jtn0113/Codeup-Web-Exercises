@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var luckyNumber;
+		var i = 1;
+		var a = 0;
+		var b = 0;
+		var c = 0; 
+		var d = 0;
+		var e = 0;
+		var f = 0;
+
+		while (i < 100) {
+    		luckyNumber = Math.floor(Math.random()* 6);
+    		i = i + luckyNumber;
+    		switch (luckyNumber) {
+    			case 0:
+    				a = a + 1;
+     			case 1:
+    				b = b + 1;
+       			case 2:
+    				c = c + 1;
+       			case 3:
+    				d = d + 1;
+       			case 4:
+    				e = e + 1;
+       			case 5:
+    				f = f + 1;
+	   		}
+		}
+		console.log("0 appeared " + a + " times.");
+		console.log("1 appeared " + b + " times.");
+		console.log("2 appeared " + c + " times.");
+		console.log("3 appeared " + d + " times.");
+		console.log("4 appeared " + e + " times.");
+		console.log("5 appeared " + f + " times.");
+	</script>
+</body>
+</html>
+
