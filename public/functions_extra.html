@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Extra Functions</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+
+		var a = "Hello there";
+		var b = "Hey you";
+
+		// 1. Write a function called "identity" that takes in a single variable and returns it.
+		// 2. Create a variable called "result" and assign it the value of the function call.  
+		function log(variable) {
+			console.log(variable)
+		};
+	
+		var result = log(a);
+		// typeof undefined
+
+		// 1. Write a function called "identity" that takes in a single variable and returns it.
+		// 2. Create a variable called "result" and assign it the value of the function call. 
+		function identity(variable) {
+			return variable
+		}
+
+		var result = identity(b);
+		// typeof string
+
+		// Write a function called getRandomIntBetween(min, max) that takes in a min and max parameter and returns a random int between those numbers.
+		function getRandomIntBetween(min, max) {
+			return Math.floor(Math.random()*(max - min + 1)+min);
+
+		}
+
+		var a = getRandomIntBetween(90, 100);
+		console.log(a);
+
+		// Write a function called isNumeric(input) that takes in the input and returns true/false if the input is a number or string containing a number
+		function isNumeric(input) {
+			if (!isNaN(input)) {
+				return true;
+			} else {
+				return false};
+		}
+		console.log(isNumeric("14"));
+
+		// add(a, b)
+		function add(a, b) {
+			return a + b
+		}
+		console.log(add(1, 2));
+
+		// subtract(a, b)
+		function subtract(a, b) {
+			return a - b
+		}
+		console.log(subtract(10, 3));
+
+		// multiply(a, b)
+		function multiply(a, b) {
+			return a * b
+		}
+		console.log(multiply(5, 4));
+
+		// divide(a, b)
+		function divide(a, b) {
+			return a / b
+		}
+		console.log(divide(100, 10));
+
+		// Define a function called square(a), make sure it uses your multiply() function, not *
+		function square(a) {
+			return multiply(a, a);
+		}
+		console.log(square(10));
+
+		// write a function definition called sumOfSquares(a,b)
+		// that only uses the add() and multiply() or square() functions from above
+		// so sumOfSquares(2, 3) should return 13
+		function sumOfSquares(a, b) {
+			return add(a*a, b*b);
+		}
+		console.log(sumOfSquares(2, 3));
+		
+
+	</script>
+</body>
+</html>
