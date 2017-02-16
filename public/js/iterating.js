@@ -11,7 +11,7 @@
     }
 
     names.forEach(function (element, index, array) {
-    	console.log(names[index]);
+    	console.log(element);
     })
 
 
