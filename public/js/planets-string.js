@@ -23,5 +23,4 @@
     var list = "<ul><li>" + planetsArray.join('</li><li>') + "</li></ul>";
     console.log(list);
 
-
 })();
