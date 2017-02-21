@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+	<link href="css/calculator.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-xs-0"></div>
+			<div class="col-md-6 col-xs-12">
+				<div class="outline">
+					<form name="calculator" class="form">
+						<table class="tbl">
+							<tr>
+								<td colspan=4><input id="left" class="input input-lg" name="display" type="text" readonly></td>
+								<td colspan=4><input id="middle" class="input input-lg" name="display" type="text" readonly></td>
+								<td colspan=4><input id="right" class="input input-lg" name="display" type="text" readonly></td>
+							</tr>
+							<tr>
+								<td><input type=button id="one" class="btn btn-primary btn-lg numBtn" value="1"></td>
+								<td><input type=button id="two" class="btn btn-primary btn-lg numBtn" value="2"></td>
+								<td><input type=button id="three" class="btn btn-primary btn-lg numBtn" value="3"></td>
+								<td><input type=button id="plus" class="btn btn-success btn-lg operator" value="+"></td>
+							</tr>
+							<tr>
+								<td><input type=button id="four" class="btn btn-primary btn-lg numBtn" value="4"></td>
+								<td><input type=button id="five" class="btn btn-primary btn-lg numBtn" value="5"></td>
+								<td><input type=button id="six" class="btn btn-primary btn-lg numBtn" value="6"></td>
+								<td><input type=button id="minus" class="btn btn-success btn-lg operator" value="-"></td>
+							</tr>
+							<tr>
+								<td><input type=button id="seven" class="btn btn-primary btn-lg numBtn" value="7"></td>
+								<td><input type=button id="eight" class="btn btn-primary btn-lg numBtn" value="8"></td>
+								<td><input type=button id="nine" class="btn btn-primary btn-lg numBtn" value="9"></td>
+								<td><input type=button id="multiply" class="btn btn-success btn-lg operator" value="*"></td>
+							</tr>
+							<tr>
+								<td><input type=button id="C" class="btn btn-success btn-lg" value="C"></td>
+								<td><input type=button id="zero" class="btn btn-primary btn-lg numBtn" value="0"></td>
+								<td><input type=button id="equals" class="btn btn-success btn-lg" value="="></td>
+								<td><input type=button id="divide" class="btn btn-success btn-lg operator" value="/"></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-3 col-xs-0"></div>
+		</div>
+	</div>
+	<script src="js/calculator.js"></script>
+</body>
+</html>
+
+
+

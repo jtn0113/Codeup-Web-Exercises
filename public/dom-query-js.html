@@ -38,24 +38,24 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         // mainHeader.innerHTML = "JavaScript is Cool";
-        var btn1 = function (event) {
+        var button1 = function (event) {
             mainHeader.innerHTML = "JavaScript is Cool";
         }
-        document.getElementById('btn1').addEventListener('click', btn1, false);
+        document.getElementById('btn1').addEventListener('click', button1);
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        var btn2 = function (event) {
+        var button2 = function (event) {
             subHeader.style.color = 'blue';
         }
-        document.getElementById('btn2').addEventListener('click', btn2, false);
+        document.getElementById('btn2').addEventListener('click', button2);
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
         
-        var btn3 = function (event) {
+        var button3 = function (event) {
         for (var i = 0; i < listItems.length; i++) {
             var dbId = listItems[i].getAttribute("data-dbid");
             if(dbId == 1){
@@ -66,16 +66,16 @@
             }
         };
         };
-        document.getElementById('btn3').addEventListener('click', btn3, false);
+        document.getElementById('btn3').addEventListener('click', button3);
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        var btn4 = function (event) {
+        var button4 = function (event) {
             subParagraphs.innerText = "Mission Accomplished";
         }
-        document.getElementById('btn4').addEventListener('click', btn4, false);
+        document.getElementById('btn4').addEventListener('click', button4);
 
     })();
 </script>

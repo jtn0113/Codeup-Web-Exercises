@@ -1,0 +1,65 @@
+body {
+	background-image: url("../img/desk.png");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    font-family: 'Caveat Brush', cursive;
+}
+
+
+.btn {
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+	position: relative;
+	left: 25px;
+}
+
+.btn-primary {
+	background: -webkit-linear-gradient(top,  #668AAC 50%,#4F7191 50%);
+}
+
+.btn-success {
+	background: -webkit-linear-gradient(top,  #738440 50%,#84964E 50%);
+}
+
+.input {
+	background: #BBCF93;
+	margin-left: 0;
+	margin-bottom: 5px;
+	padding: 0;
+	text-align: center;
+}
+
+#left {
+	width: 90px;
+	position: relative;
+	left: 14px;
+}
+#middle {
+	width: 40px;
+	position: relative;
+	right: 96px;
+}
+#right {
+	width: 90px;
+	position: relative;
+	right: 96px;
+}
+.form {
+	width: 300px;
+	height: 350px;
+	margin: 0 auto;
+}
+
+.outline {
+	background-color: #5C5956;
+	height:275px;
+	width:250px;
+	border-radius:10px;
+	margin-top: 80px;
+	padding-top: 15px;
+	position: relative;
+	left: 150px;
+	top: 315px;
+}
