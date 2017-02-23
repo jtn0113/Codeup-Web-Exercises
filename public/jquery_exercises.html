@@ -5,11 +5,11 @@
 </head>
 <body>
 	<div id="main" class="top">
-		<h1 class="header" id="topHeader">jQuery Exercise</h1>
+		<h1 class="listItem" id="topHeader">jQuery Exercise</h1>
 		<p class="paragraph" id="topParagraph">
 			<ul class="list" id="mainList">
 				<li class="listItem">Uno</li>
-				<li class="listItem">Dos</li>
+				<li class="listItem1">Dos</li>
 				<li class="listItem">Tres</li>
 			</ul>
 		</p>
@@ -26,8 +26,18 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-	    var list = $('#topHeader');
-    	alert(list.html());
+
+    	$('.listItem').css('background-color', 'brown');
+    	$('.listItem').css('border-style', 'dotted');
+    	$('.listItem').css('border-color', 'red');
+    	$('.listItem').css('border-width', '10px');
+    	$('.listItem').css('color', 'violet');
+    	$('.listItem').css('text-align', 'center');
+    	$('.listItem').css('padding', '10px');
+    	$('.listItem').css('margin', '20px');
+    	$('.listItem').css('font-family', 'tahoma');
+    	$('.listItem').css('font-style', 'oblique');
+    	$('.listItem').css('font-size', '10px');
 
 		});
 	</script>
