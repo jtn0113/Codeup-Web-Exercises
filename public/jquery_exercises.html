@@ -27,17 +27,14 @@
 		$(document).ready(function() {
 
 
-    	$('.listItem').css('background-color', 'brown');
-    	$('.listItem').css('border-style', 'dotted');
-    	$('.listItem').css('border-color', 'red');
-    	$('.listItem').css('border-width', '10px');
-    	$('.listItem').css('color', 'violet');
-    	$('.listItem').css('text-align', 'center');
-    	$('.listItem').css('padding', '10px');
-    	$('.listItem').css('margin', '20px');
-    	$('.listItem').css('font-family', 'tahoma');
-    	$('.listItem').css('font-style', 'oblique');
-    	$('.listItem').css('font-size', '10px');
+    	$('.listItem').css('border', '10px dotted red');
+
+    	$('li').css('font-size', '20px');
+
+    	$('h1, p, li').css('background-color', 'yellow');
+
+    	var alerth1 = $('h1').html();
+    	alert(alerth1);
 
 		});
 	</script>
