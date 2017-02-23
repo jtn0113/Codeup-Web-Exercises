@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+</head>
+<body>
+	<div id="main" class="top">
+		<h1 class="header" id="topHeader">jQuery Exercise</h1>
+		<p class="paragraph" id="topParagraph">
+			<ul class="list" id="mainList">
+				<li class="listItem">Uno</li>
+				<li class="listItem">Dos</li>
+				<li class="listItem">Tres</li>
+			</ul>
+		</p>
+	</div>
+
+
+
+
+	<script
+		src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous">
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	    var list = $('#topHeader');
+    	alert(list.html());
+
+		});
+	</script>
+</body>
+</html>
+
+
+
+<!-- 
+
+var sp = $("#specialItem");
+console.log(sp);
+$("#specialItem").css("background-color", "yellow");
+$("#specialItem").css("color", "red");
+sp.html("<em>Hello World</em>"); -->
