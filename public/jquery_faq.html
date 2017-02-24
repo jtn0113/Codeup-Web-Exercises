@@ -41,9 +41,32 @@
 			<dd class="invisible">FY 2014 Enacted: $2.98 billion<br>FY 2015 Request: $3.65 billion</dd>
 			<br>
 	</dl>
-
 	<button id="remove-invisible" type="button">Toggle FAQ Answers On/Off</button>
 
+
+		<h3>Redwood National Park</h3>
+	<ul id="redwood">
+		<li>Located in Humboldt County and Del Norte County, California</li>
+		<li>Established August 27, 1969</li>
+		<li>Size: 139,000 acres</li>
+		<li>Visitors: 536,297 (in 2016)</li>
+	</ul>
+
+		<h3>Grand Canyon National Park</h3>
+	<ul id="grandCanyon">
+		<li>Located in Coconino and Mohave counties, Arizona</li>
+		<li>Established February 26, 1919</li>
+		<li>Size: 1,217,262 acres</li>
+		<li>Visitors: 5,969,811 (in 2016)</li>
+	</ul>
+
+		<h3>Big Bend National Park</h3>
+	<ul id="bigBend">
+		<li>Located in Brewster County, Texas</li>
+		<li>Established June 12, 1944</li>
+		<li>Size: 801,163 acres</li>
+		<li>Visitors: 388,290 (in 2016)</li>
+	</ul>
 
 
 
@@ -62,7 +85,17 @@
                 $('dd').toggleClass('invisible');
             });
 
+		$('ul').each(function(){ 
+			$(this).children().first().css('font-weight', 'bold');	
+		});
+
+		$('li').click(function(event) {
+                $(this).parent().addClass('invisible');
+            });
+
 	});
 	</script>
 </body>
 </html>
+
+
