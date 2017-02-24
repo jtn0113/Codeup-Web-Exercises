@@ -82,15 +82,15 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#remove-invisible').click(function(event) {
-                $('dd').toggle('invisible');
+                $('dd').slideToggle();
             });
 
 		$('ul').each(function(){ 
 			$(this).children().first().css('font-weight', 'bold');	
 		});
 
-		$('li').click(function(event) {
-                $(this).parent().hide();
+		$('h3').click(function(event) {
+                $(this).next('ul').slideToggle();
             });
 
 	});
