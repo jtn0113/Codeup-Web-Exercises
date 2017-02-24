@@ -6,13 +6,12 @@
 <body>
 	<div id="main" class="top">
 		<h1 class="listItem" id="topHeader">jQuery Exercise</h1>
-		<p class="paragraph" id="topParagraph">
+		<p class="paragraph" id="topParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita accusantium eum, exercitationem sit sunt repellendus esse nulla, culpa, est ea qui debitis maiores quidem adipisci earum fugiat odio vitae? Fugit.</p>
 			<ul class="list" id="mainList">
 				<li class="listItem">Uno</li>
 				<li class="listItem1">Dos</li>
 				<li class="listItem">Tres</li>
 			</ul>
-		</p>
 	</div>
 
 
@@ -27,14 +26,19 @@
 		$(document).ready(function() {
 
 
-    	$('.listItem').css('border', '10px dotted red');
+            $('h1').click(function() {
+                $(this).css("background-color", "teal");
+            });
 
-    	$('li').css('font-size', '20px');
+            $('p').dblclick(function() {
+                $(this).css("font-size", "18px");
+            });
 
-    	$('h1, p, li').css('background-color', 'yellow');
+            $('li').hover(function() {
+                $(this).css("color", "red");
+            });
 
-    	var alerth1 = $('h1').html();
-    	alert(alerth1);
+
 
 		});
 	</script>
