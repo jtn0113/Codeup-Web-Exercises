@@ -82,7 +82,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#remove-invisible').click(function(event) {
-                $('dd').toggleClass('invisible');
+                $('dd').toggle('invisible');
             });
 
 		$('ul').each(function(){ 
@@ -90,7 +90,7 @@
 		});
 
 		$('li').click(function(event) {
-                $(this).parent().addClass('invisible');
+                $(this).parent().hide();
             });
 
 	});
