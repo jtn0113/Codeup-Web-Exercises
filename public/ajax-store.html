@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+	<button id="refresh" class="btn btn-md btn-success">Refresh</button>
+
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+		  <tr>
+			<th>Tool</th>
+			<th>Quantity</th> 
+			<th>Categories</th>
+			<th>Price</th>
+		  </tr>
+		</thead>
+		<tbody id="tools">	
+		</tbody>
+	</table>
+
+
+
+	<script
+		src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous">
+	</script>
+	<script type="text/javascript">
+			function pageData() {
+				$.ajax("/data/inventory.json").done(function(data) {
+				data.forEach(function(tool) {
+				var contents = "<tr>";
+					console.log(tool);
+					contents += "<td>" + tool.title + "</td>";
+					contents += "<td>" + tool.quantity + "</td>";
+					contents += "<td>" + tool.categories + "</td>";
+					contents += "<td>" + tool.price + "</td>";
+					contents += "</tr>"
+					$("#tools").append(contents);
+					});
+				});
+			};
+			pageData();
+
+		$("#refresh").click(function() {
+			$("#tools").html("");
+			pageData();
+		});
+
+	</script>
+</body>
+</html>
