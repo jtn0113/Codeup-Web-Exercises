@@ -18,11 +18,11 @@ $favoriteThings = ['Long walks on the beach', 'red wine', 'bubble baths', 'flowe
 				<th><h1>My favorite things</h1></th>
 			</tr>
 			<tr>
-				<?php foreach($favoriteThings as $thing) {
-					echo "<tr>
+				<?php foreach($favoriteThings as $thing) : ?>
+					<?= "<tr>
 							<td>" . $thing . "</td>
-						</tr>";
-				} ?>
+						</tr>"; ?>
+				<?php endforeach ?>
 			</tr>
 		</table>
 	</body>

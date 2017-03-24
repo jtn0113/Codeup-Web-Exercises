@@ -18,6 +18,6 @@ function serverName($adjectives, $nouns) {
 		<title>Server Name Generator</title>
 	</head>
 	<body>
-		<h1><?php serverName($adjectives, $nouns) ?></h1>
+		<h1><?= serverName($adjectives, $nouns) ?></h1>
 	</body>
 </html>
