@@ -32,12 +32,12 @@ extract(pageController());
  		<h1><?= $counter ?></h1>
 	 	<form action="counter.php" method="get">
 		 	<input type="hidden" name="q" value="up">
-		 	<input type="hidden" name="counter" value=<?= $counter ?>>
+		 	<input type="hidden" name="counter" value=<?= $counter -1 ?>>
 		 	<button type="submit">Up</button>
 		</form>
 	 	<form action="counter.php" method="get">
 		 	<input type="hidden" name="q" value="down">
-		 	<input type="hidden" name="counter" value=<?= $counter ?>>
+		 	<input type="hidden" name="counter" value=<?= $counter -1?>>
 		 	<button type="submit">Down</button>
 		</form>
  	</body>
