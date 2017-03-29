@@ -2,6 +2,8 @@
 
 function pageController() {
 
+	require "functions.php";
+
 	session_start();
 
 	$sessionId = session_id();
@@ -13,19 +15,27 @@ function pageController() {
 		header("Location: authorized.php");
 	}
 
-	if (isset($_POST['username'])) {
-		$data['username'] = $_POST['username'];
+// 	if(inputHas('counter')) {
+// 	inputGet('counter');
+// 	$data['counter'] = $_REQUEST['counter'];
+// } else {
+// 	$data['counter'] = 0;
+// }
+
+	if(inputHas('username')) {
+		$data['username'] = $_REQUEST['username'];
 	}
 
-	if (isset($_POST['password'])) {
-		$data['password'] = $_POST['password'];
+	if(inputHas('password')) {
+		$data['password'] = $_REQUEST['password'];
 	}
+
 
 	if (isset($data['username']) == 'guest' && $data['password'] == 'password') {
 		$_SESSION['logged_in_user'] = 'guest';
 		header("Location: authorized.php");
 	} else if (isset($data['username'])) {
-		$data['notAuthorized'] = "Not authorized";
+		$data['notAuthorized'] = escape("Not authorized");
 	}
 
 	return $data;
