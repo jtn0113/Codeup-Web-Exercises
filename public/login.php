@@ -1,48 +1,14 @@
 <?php 
 
-function pageController() {
+require_once "../Auth.php";
 
-	require "functions.php";
+session_start();
 
-	session_start();
+$loginError;
 
-	$sessionId = session_id();
-
-	$data = [];
-	$data['notAuthorized'] = '';
-
-	if (isset($_SESSION['logged_in_user']) && $_SESSION['logged_in_user'] == 'guest') {
-		header("Location: authorized.php");
-	}
-
-// 	if(inputHas('counter')) {
-// 	inputGet('counter');
-// 	$data['counter'] = $_REQUEST['counter'];
-// } else {
-// 	$data['counter'] = 0;
-// }
-
-	if(inputHas('username')) {
-		$data['username'] = $_REQUEST['username'];
-	}
-
-	if(inputHas('password')) {
-		$data['password'] = $_REQUEST['password'];
-	}
-
-
-	if (isset($data['username']) == 'guest' && $data['password'] == 'password') {
-		$_SESSION['logged_in_user'] = 'guest';
-		header("Location: authorized.php");
-	} else if (isset($data['username'])) {
-		$data['notAuthorized'] = escape("Not authorized");
-	}
-
-	return $data;
+if (!empty($_REQUEST)) {
+	Auth::attempt($_REQUEST['username'], $_REQUEST['password']);
 }
-
-extract(pageController());
-
 
 ?>
 
@@ -52,19 +18,11 @@ extract(pageController());
 	<title>POST Login</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/login.css">
+	<style>
+		
+	</style>
 </head>
 <body>
-<!-- 	 <form class"form-inline" action="login.php" method="POST">
-	 	<label>Username</label>
-	 	<input class="input-xs" type="text" name="username">
-	 	<label>Password</label>
-	 	<input class="input-xs" type="password" name="password">
-	 	<button class="btn btn-xs btn-danger" type="submit">Login</button>
-	</form> -->
-	<h1> <?= $notAuthorized ?> </h1>
-
-
-
 	<div class="container">
         <div class="card card-container">
         <h2 class='login_title text-center'>Login</h2>

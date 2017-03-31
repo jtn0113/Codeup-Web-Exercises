@@ -1,20 +1,19 @@
 <?php 
 
-require "functions.php";
+require_once "../Input.php";
 
 function pageController() {
 
 $data = [];
 
-if(inputHas('counter')) {
-	inputGet('counter');
+if(Input::has('counter')) {
+	Input::get('counter');
 	$data['counter'] = $_REQUEST['counter'];
 } else {
 	$data['counter'] = 0;
 }
 
-
-if (inputHas('q')) {
+if (Input::has('q')) {
 	if ($_REQUEST['q'] == 'hit') {
 		$data['counter'] ++;
 	} else if ($_REQUEST['q'] == 'miss') {
