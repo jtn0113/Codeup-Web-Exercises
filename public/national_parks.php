@@ -39,7 +39,7 @@ function pageController($dbc) {
 		}
 	}
 	
-	$data['select'] = "select * from national_parks limit 4 offset " . $data['offset'];
+	$data['select'] = "select * from national_parks order by location limit 4 offset " . $data['offset'];
 	
 	$data['statement'] = $dbc->query($data['select']);
 
