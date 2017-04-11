@@ -56,6 +56,11 @@ extract(pageController($dbc));
 <head>
 	<title>National Parks</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+		.btn {
+			float: left;
+		}
+	</style>
 </head>
 <body>
 	<h1>National Parks</h1>
@@ -68,7 +73,7 @@ extract(pageController($dbc));
 		</tr>
 		<?php foreach($parks as $park): ?>
 			<tr>
-				<td><?= $park['name'] ?></td>
+				<td><a target="_blank" href="https://en.wikipedia.org/wiki/ <?= $park['name']?> _National_Park"><?= $park['name']?></a></td>
 				<td><?= $park['location'] ?></td>
 				<td><?= $park['date_established'] ?></td>
 				<td><?= $park['area_in_acres'] ?></td>
