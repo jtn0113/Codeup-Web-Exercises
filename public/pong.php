@@ -1,19 +1,22 @@
 <?php 
 
+require_once "../Input.php";
+
 function pageController() {
 
 $data = [];
 
-if(isset($_GET['counter'])) {
-$data['counter'] = $_GET['counter'];
+if(Input::has('counter')) {
+	Input::get('counter');
+	$data['counter'] = $_REQUEST['counter'];
 } else {
 	$data['counter'] = 0;
 }
 
-if (isset($_GET['q'])) {
-	if ($_GET['q'] == 'hit') {
+if (Input::has('q')) {
+	if ($_REQUEST['q'] == 'hit') {
 		$data['counter'] ++;
-	} else if ($_GET['q'] == 'miss') {
+	} else if ($_REQUEST['q'] == 'miss') {
 		$data['counter'] = 0;
 	}
 }
