@@ -107,8 +107,9 @@ extract(pageController($dbc));
 	 	<button class="btn btn-danger" type="submit">Next</button>
 	</form>
 	<br><br>
+	<h1>Add a National Park</h1>
 	<h4><?php if (isset($message)) {echo $message;} ?></h4>
-	<form action="national_parks.php" method="post">
+	<form action="national_parks.php" method="post" class="container">
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input type="text" class="form-control" id="name" name="name">
@@ -118,7 +119,7 @@ extract(pageController($dbc));
 			<input type="text" class="form-control" id="location" name="location">
 		</div>
 		<div class="form-group">
-			<label for="dateEstablished">Date Established</label>
+			<label for="dateEstablished">Date Established (YYYY-MM-DD)</label>
 			<input type="text" class="form-control" id="dateEstablished" name="dateEstablished">
 		</div>
 		<div class="form-group">
