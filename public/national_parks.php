@@ -12,6 +12,22 @@ function pageController($dbc) {
 	
 	$data['page'] = 1;
 
+	if($_POST) {
+		if(empty($_POST['name']) || empty($_POST['location']) || empty($_POST['dateEstablished']) || empty($_POST['areaInAcres']) || empty($_POST['description'])) {
+			$data['message'] = "****All fields are required****";
+		} else {
+			$insert = "insert into national_parks (name, location, date_established, area_in_acres, description) values (:name, :location, :date_established, :area_in_acres, :description)";
+			$statement = $dbc->prepare($insert);
+			$statement->bindValue(':name', $_POST['name']);
+		    $statement->bindValue(':location', $_POST['location']);
+		    $statement->bindValue(':date_established', $_POST['dateEstablished']);
+		    $statement->bindValue(':area_in_acres', $_POST['areaInAcres']);
+		    $statement->bindValue(':description', $_POST['description']);
+		    $statement->execute();
+		    header("location: national_parks.php");
+		}
+	}
+
 	if(Input::has('page')) {
 		$data['page'] = Input::get('page');
 		// Limits page from going too low
@@ -38,12 +54,11 @@ function pageController($dbc) {
 	// 	}
 	// }
 	
-	$data['select'] = "select * from national_parks limit 10 offset " . $data['offset'];
-	
-	$data['statement'] = $dbc->query($data['select']);
-
-	$data['parks'] = $data['statement']->fetchAll(PDO::FETCH_ASSOC);
-
+	$data['select'] = "select * from national_parks order by name limit 10 offset :offset";
+	$statement = $dbc->prepare($data['select']);
+	$statement->bindValue(':offset', $data['offset'], PDO::PARAM_INT);
+	$statement->execute();
+	$data['parks'] = $statement->fetchAll(PDO::FETCH_ASSOC);
 	return $data;
 }
 
@@ -91,5 +106,31 @@ extract(pageController($dbc));
 	 	<input type="hidden" name="page" value=<?= $page+1 ?>>
 	 	<button class="btn btn-danger" type="submit">Next</button>
 	</form>
+	<br><br>
+	<h4><?php if (isset($message)) {echo $message;} ?></h4>
+	<form action="national_parks.php" method="post">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" name="name">
+		</div>
+		<div class="form-group">
+			<label for="location">Location</label>
+			<input type="text" class="form-control" id="location" name="location">
+		</div>
+		<div class="form-group">
+			<label for="dateEstablished">Date Established</label>
+			<input type="text" class="form-control" id="dateEstablished" name="dateEstablished">
+		</div>
+		<div class="form-group">
+			<label for="areaInAcres">Area In Acres</label>
+			<input type="text" class="form-control" id="areaInAcres" name="areaInAcres">
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<input type="text" class="form-control" id="description" name="description">
+		</div>
+		<button type="submit" class="btn btn-danger">Submit</button>
+	</form>
+
 </body>
 </html>
