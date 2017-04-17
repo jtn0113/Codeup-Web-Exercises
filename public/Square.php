@@ -4,12 +4,16 @@ require_once 'Rectangle.php';
 
 class Square extends Rectangle {
 
-	public function perimeter() {
-		if($this->height == $this->width) {
-			return $this->height*4;
-		} else {
-			return "This is not a square";
-		}
+	public function __construct($height) {
+		parent::__construct($height, $height);
 	}
+
+	public function perimeter() {
+		return $this->height*4;
+	}
+
+    public function area() {
+    	return $this->height*2;
+    }
 
 }
