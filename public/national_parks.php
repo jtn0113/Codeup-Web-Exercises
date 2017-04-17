@@ -18,11 +18,11 @@ function pageController($dbc) {
 		} else {
 			$insert = "insert into national_parks (name, location, date_established, area_in_acres, description) values (:name, :location, :date_established, :area_in_acres, :description)";
 			$statement = $dbc->prepare($insert);
-			$statement->bindValue(':name', $_POST['name']);
-		    $statement->bindValue(':location', $_POST['location']);
-		    $statement->bindValue(':date_established', $_POST['dateEstablished']);
-		    $statement->bindValue(':area_in_acres', $_POST['areaInAcres']);
-		    $statement->bindValue(':description', $_POST['description']);
+			$statement->bindValue(':name', Input::getString('name'));
+		    $statement->bindValue(':location', Input::getString('location'));
+		    $statement->bindValue(':date_established', Input::getString('dateEstablished'));
+		    $statement->bindValue(':area_in_acres', Input::getNumber('areaInAcres'));
+		    $statement->bindValue(':description', Input::getString('description'));
 		    $statement->execute();
 		    header("location: national_parks.php");
 		}
