@@ -2,6 +2,21 @@
 
 class Input
 {
+
+    public static function getNumber($key) {
+        $input = self::get($key);
+        if(!is_numeric($input)) {
+            throw new Exception("Input for $key must be a number");
+        }
+    }
+
+    public static function getString($key) {
+        $input = self::get($key);
+        if(!is_string($input) || is_numeric($input)) {
+            throw new Exception("Input for $key must be a string");
+        }
+    }
+
     /**
      * Check if a given value was passed in the request
      *

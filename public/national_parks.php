@@ -12,19 +12,49 @@ function pageController($dbc) {
 	
 	$data['page'] = 1;
 
+	$data['errors'] = [];
+
 	if($_POST) {
 		if(empty($_POST['name']) || empty($_POST['location']) || empty($_POST['dateEstablished']) || empty($_POST['areaInAcres']) || empty($_POST['description'])) {
 			$data['message'] = "****All fields are required****";
 		} else {
 			$insert = "insert into national_parks (name, location, date_established, area_in_acres, description) values (:name, :location, :date_established, :area_in_acres, :description)";
-			$statement = $dbc->prepare($insert);
-			$statement->bindValue(':name', $_POST['name']);
-		    $statement->bindValue(':location', $_POST['location']);
-		    $statement->bindValue(':date_established', $_POST['dateEstablished']);
-		    $statement->bindValue(':area_in_acres', $_POST['areaInAcres']);
-		    $statement->bindValue(':description', $_POST['description']);
-		    $statement->execute();
-		    header("location: national_parks.php");
+				$statement = $dbc->prepare($insert);
+
+			try {
+				$statement->bindValue(':name', Input::getString('name'));
+			} catch (Exception $e) {
+				$data['errors'][] = '**Name must be a string**';
+			}
+
+			try {
+			    $statement->bindValue(':location', Input::getString('location'));
+			} catch (Exception $e) {
+				$data['errors'][] = '**Location must be a string**';
+			}
+
+			try {
+			    $statement->bindValue(':date_established', Input::getString('dateEstablished'));
+			} catch (Exception $e) {
+				$data['errors'][] = '**Date established must be a string**';
+			}
+
+			try {
+			    $statement->bindValue(':area_in_acres', Input::getNumber('areaInAcres'));
+			} catch (Exception $e) {
+				$data['errors'][] = '**Area in acres must be a number**';
+			}
+
+			try {
+			    $statement->bindValue(':description', Input::getString('description'));
+			} catch (Exception $e) {
+				$data['errors'][] = '**Description must be a string**';
+			}
+
+			if(empty($data['errors'])) {
+			    $statement->execute();
+		    	header("location: national_parks.php");
+		    }
 		}
 	}
 
@@ -108,27 +138,31 @@ extract(pageController($dbc));
 	</form>
 	<br><br>
 	<h1>Add a National Park</h1>
+	<h3><?php foreach($errors as $error) : echo $error ?>
+		<br>
+		<?php endforeach;?>
+	</h3>
 	<h4><?php if (isset($message)) {echo $message;} ?></h4>
 	<form action="national_parks.php" method="post" class="container">
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input type="text" class="form-control" id="name" name="name">
+			<input type="text" class="form-control" id="name" name="name" value="<?= Input::has('name') ? Input::get('name') : '' ?>">
 		</div>
 		<div class="form-group">
 			<label for="location">Location</label>
-			<input type="text" class="form-control" id="location" name="location">
+			<input type="text" class="form-control" id="location" name="location" value="<?= Input::has('location') ? Input::get('location') : '' ?>">
 		</div>
 		<div class="form-group">
 			<label for="dateEstablished">Date Established (YYYY-MM-DD)</label>
-			<input type="text" class="form-control" id="dateEstablished" name="dateEstablished">
+			<input type="text" class="form-control" id="dateEstablished" name="dateEstablished" value="<?= Input::has('dateEstablished') ? Input::get('dateEstablished') : '' ?>">
 		</div>
 		<div class="form-group">
 			<label for="areaInAcres">Area In Acres</label>
-			<input type="text" class="form-control" id="areaInAcres" name="areaInAcres">
+			<input type="text" class="form-control" id="areaInAcres" name="areaInAcres" value="<?= Input::has('areaInAcres') ? Input::get('areaInAcres') : '' ?>">
 		</div>
 		<div class="form-group">
 			<label for="description">Description</label>
-			<input type="text" class="form-control" id="description" name="description">
+			<input type="text" class="form-control" id="description" name="description" value="<?= Input::has('description') ? Input::get('description') : '' ?>">
 		</div>
 		<button type="submit" class="btn btn-danger">Submit</button>
 	</form>
