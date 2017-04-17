@@ -12,7 +12,7 @@ class Input
 
     public static function getString($key) {
         $input = self::get($key);
-        if(!is_string($input)) {
+        if(!is_string($input) || is_numeric($input)) {
             throw new Exception("Input for $key must be a string");
         }
     }
